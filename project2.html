@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Amine Azarkan Portfolio - Project 1</title>
+    <title>Amine Azarkan Portfolio - Analytics Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/reset.css">
@@ -28,25 +28,57 @@
 <div class="container mt-5">
     <div class="row">
         <main class="col-lg-8">
-            <h2>Project 1 Titel</h2>
-            <img src="" class="img-fluid mb-3" alt="Project 2">
-            <p>Beschrijving van Project 1. Hier kun je uitleg geven over het doel, de uitdagingen en de oplossingen van het project.</p>
+            <h2>Analytics Dashboard</h2>
+            <img src="/assets/AnalyticsDashboard.jpg" class="project-detail-img" alt="Analytics Dashboard">
+            
+            <div class="project-content">
+                <h3>Project beschrijving</h3>
+                <p>Een interactief analytics dashboard dat bedrijfsgegevens visualiseert in duidelijke grafieken en tabellen. Dit dashboard helpt managers om snel inzicht te krijgen in verkoopcijfers, gebruikersgedrag en belangrijke KPI's.</p>
+            </div>
+            
+            <div class="project-content">
+                <h3>Uitdagingen & oplossingen</h3>
+                <p>Het verwerken en visualiseren van grote hoeveelheden data was de grootste uitdaging. Ik heb Chart.js geïmplementeerd voor soepele, interactieve grafieken en heb de data geoptimaliseerd voor snelle laadtijden.</p>
+            </div>
+            
+            <div class="project-content">
+                <h3>Functionaliteiten</h3>
+                <ul class="tech-list">
+                    <li>Interactieve lijngrafieken en staafdiagrammen</li>
+                    <li>Datumbereik selectie met real-time updates</li>
+                    <li>Export functionaliteit naar CSV en PDF</li>
+                    <li>Dark mode toggle voor comfortabel werken</li>
+                    <li>Mobielvriendelijk responsive design</li>
+                    <li>Live data feed via REST API</li>
+                </ul>
+            </div>
+            
+            <div class="project-content">
+                <h3>Geleerde lessen</h3>
+                <p>Dit project heeft mijn kennis van data-visualisatiebibliotheken en API-integratie aanzienlijk verbeterd. Ik heb geleerd hoe ik complexe datasets efficiënt kan verwerken en presenteren aan eindgebruikers.</p>
+            </div>
         </main>
 
-        <aside class="col-lg-4 p-4" style="background-color: #111; border-radius: 10px;">
-            <h3 class="text-white">Technologie</h3>
-            <ul class="text-white">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Bootstrap</li>
+        <aside>
+            <h3>Technologieën</h3>
+            <ul class="tech-list">
+                <li>JavaScript (ES6+)</li>
+                <li>Chart.js</li>
+                <li>HTML5 / CSS3</li>
+                <li>REST API integratie</li>
+                <li>Fetch API</li>
             </ul>
+            <h3 class="mt-4">Project Info</h3>
+            <p class="text-white-50 small mb-1">Datum: februari 2025</p>
+            <p class="text-white-50 small mb-1">Duur: 2 weken</p>
+            <p class="text-white-50 small">Categorie: Data visualisatie</p>
         </aside>
     </div>
 </div>
 
 <footer class="bg-dark text-white text-center p-3 mt-5">
-    <p>© 2026 Amine Azarkan</p>
+    <p>© <span id="year"></span> Amine Azarkan</p>
 </footer>
-
+<script src="./js/script.js"></script>
 </body>
 </html>

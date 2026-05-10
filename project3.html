@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Amine Azarkan Portfolio - Project 1</title>
+    <title>Amine Azarkan Portfolio - Responsive Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/reset.css">
@@ -14,7 +14,7 @@
 <header class="navbar-custom p-3 bg-dark">
     <div class="container d-flex justify-content-between align-items-center">
         <a href="index.html">
-            <img src="/portfolio/assets/amine.png" alt="Logo" class="me-3" style="height: 70px;">
+            <img src="./assets/amine.png" alt="Logo" class="me-3" style="height: 70px;">
         </a>
         <h1 class="mb-0 text-white">Amine Azarkan</h1>
         <nav class="ms-auto">
@@ -28,25 +28,57 @@
 <div class="container mt-5">
     <div class="row">
         <main class="col-lg-8">
-            <h2>Project 1 Titel</h2>
-            <img src="" class="img-fluid mb-3" alt="Project 3">
-            <p>Beschrijving van Project 1. Hier kun je uitleg geven over het doel, de uitdagingen en de oplossingen van het project.</p>
+            <h2>Responsive Portfolio</h2>
+            <img src="/assets/ResposivePortfolio.jpg" class="project-detail-img" alt="Responsive Portfolio">
+            
+            <div class="project-content">
+                <h3>Project beschrijving</h3>
+                <p>Een modern en volledig responsief portfolio ontwerp dat perfect werkt op desktop, tablet en mobiel. Dit project toont mijn vaardigheden in front-end design en responsive web development.</p>
+            </div>
+            
+            <div class="project-content">
+                <h3>Uitdagingen & oplossingen</h3>
+                <p>Het creëren van een naadloze gebruikerservaring op alle schermformaten was prioritair. Ik heb gebruik gemaakt van CSS Grid, Flexbox en media queries om een flexibel grid-systeem te bouwen dat zich aanpast aan elke schermgrootte.</p>
+            </div>
+            
+            <div class="project-content">
+                <h3>Functionaliteiten</h3>
+                <ul class="tech-list">
+                    <li>Fully responsive layout (mobile-first approach)</li>
+                    <li>Animaties en hover effecten voor interactie</li>
+                    <li>Dark theme met contrastrijke kleuren</li>
+                    <li>Projectfilter op categorie</li>
+                    <li>Contactformulier met validatie</li>
+                    <li>Smooth scrolling navigatie</li>
+                </ul>
+            </div>
+            
+            <div class="project-content">
+                <h3>Geleerde lessen</h3>
+                <p>Dit project was een geweldige oefening in CSS layout technieken en responsive design principes. Ik heb geleerd hoe belangrijk een goede mobile-first strategie is voor moderne webapplicaties.</p>
+            </div>
         </main>
 
-        <aside class="col-lg-4 p-4" style="background-color: #111; border-radius: 10px;">
-            <h3 class="text-white">Technologie</h3>
-            <ul class="text-white">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>Bootstrap</li>
+        <aside>
+            <h3>🛠️ Technologieën</h3>
+            <ul class="tech-list">
+                <li>HTML5</li>
+                <li>CSS3 (Grid, Flexbox)</li>
+                <li>Bootstrap 5</li>
+                <li>JavaScript</li>
+                <li>CSS Animations</li>
             </ul>
+            <h3 class="mt-4">Project Info</h3>
+            <p class="text-white-50 small mb-1">Datum: maart 2025</p>
+            <p class="text-white-50 small mb-1">Duur: 2 weken</p>
+            <p class="text-white-50 small">Categorie: UI/UX Design</p>
         </aside>
     </div>
 </div>
 
 <footer class="bg-dark text-white text-center p-3 mt-5">
-    <p>© 2026 Amine Azarkan</p>
+    <p>© <span id="year"></span> Amine Azarkan</p>
 </footer>
-
+<script src="./js/script.js"></script>
 </body>
 </html>

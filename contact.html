@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Amine Azarkan Portfolio</title>
+    <title>Amine Azarkan Portfolio - Contact</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/map.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 
 <body>
@@ -20,7 +23,7 @@
         <nav class="ms-auto">
             <a href="index.html" class="text-white me-3">Home</a>
             <a href="portfolio.html" class="text-white me-3">Portfolio</a>
-            <a href="contact.html" class="text-white">Contact</a>
+            <a href="contact.html" class="text-white active">Contact</a>
         </nav>
     </div>
 </header>
@@ -29,36 +32,95 @@
     <div class="row">
         <main class="col-lg-8">
             <h2>Contact</h2>
-            <form>
+            
+            <!-- Success/Error meldingen -->
+            <div id="form-status" style="display: none;" class="alert"></div>
+            
+            <!-- Netlify form -->
+            <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                <input type="hidden" name="form-name" value="contact">
+                
                 <div class="mb-3">
-                    <label class="form-label">Naam</label>
-                    <input type="text" class="form-control">
+                    <label class="form-label" for="name">Naam *</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control">
+                    <label class="form-label" for="email">Email *</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Bericht</label>
-                    <textarea class="form-control" rows="5"></textarea>
+                    <label class="form-label" for="subject">Onderwerp</label>
+                    <input type="text" class="form-control" id="subject" name="subject">
                 </div>
 
-                <button class="btn btn-primary">Verzenden</button>
+                <div class="mb-3">
+                    <label class="form-label" for="message">Bericht *</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <div class="mb-3" data-netlify-recaptcha="true"></div>
+
+                <button type="submit" class="btn btn-primary">Verzenden</button>
             </form>
         </main>
 
-        <aside class="col-lg-4 p-4" style="background-color: #111; border-radius: 10px;">
-            <h3 class="text-white">Contact info</h3>
-            <p class="text-white">Email: amine.azarkan@gmail.com</p>
+        <aside>
+            <h3 class="text-white">Contact</h3>
+            <div id="apMap" style="height: 250px; width: 100%; border-radius: 10px; margin-bottom: 15px;"></div>
+            <p class="text-white">
+                Amine Azarkan<br>
+                <a href="mailto:amine.azarkan@gmail.com">amine.azarkan@gmail.com</a>
+            </p>
         </aside>
     </div>
 </div>
 
 <footer class="bg-dark text-white text-center p-3 mt-5">
-    <p>© 2026 Amine Azarkan</p>
+    <p>© <span id="year"></span> Amine Azarkan</p>
 </footer>
+
+<script src="./js/map-ap.js"></script>
+<script src="./js/script.js"></script>
+
+<!-- AJAX script voor Netlify Forms (werkt zowel lokaal als online) -->
+<script>
+    const form = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(form);
+        
+        try {
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            });
+            
+            if (response.ok) {
+                formStatus.style.display = 'block';
+                formStatus.className = 'alert alert-success mt-3';
+                formStatus.innerHTML = '✅ Bedankt! Je bericht is succesvol verzonden.';
+                form.reset();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        } catch (error) {
+            formStatus.style.display = 'block';
+            formStatus.className = 'alert alert-danger mt-3';
+            formStatus.innerHTML = '❌ Er is een fout opgetreden. Probeer het later opnieuw.';
+        }
+    }
+    
+    if (form) {
+        form.addEventListener('submit', handleSubmit);
+    }
+</script>
+
 
 </body>
 </html>
