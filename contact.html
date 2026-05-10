@@ -30,13 +30,11 @@
 
 <div class="container mt-5">
     <div class="row">
-        <main class="col-lg-8">
+        <main class="col-lg-8 col-md-8 col-sm-12">
             <h2>Contact</h2>
             
-            <!-- Success/Error meldingen -->
             <div id="form-status" style="display: none;" class="alert"></div>
             
-            <!-- Netlify form -->
             <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
                 <input type="hidden" name="form-name" value="contact">
                 
@@ -66,7 +64,7 @@
             </form>
         </main>
 
-        <aside>
+        <aside class="col-lg-4 col-md-4 col-sm-12">
             <h3 class="text-white">Contact</h3>
             <div id="apMap" style="height: 250px; width: 100%; border-radius: 10px; margin-bottom: 15px;"></div>
             <p class="text-white">
@@ -78,11 +76,10 @@
 </div>
 
 <footer class="bg-dark text-white text-center p-3 mt-5">
-    <p>© <span id="year"></span> Amine Azarkan</p>
+    <p>&copy; <span id="year"></span> Amine Azarkan</p>
 </footer>
 
 <script src="./js/map-ap.js"></script>
 <script src="./js/script.js"></script>
-<script src="/js/contact.js"></script>
 </body>
 </html>
