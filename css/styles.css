@@ -15,6 +15,22 @@ aside {
     padding: 1.5rem;
 }
 
+/* Zorg dat aside op desktop naast main staat */
+@media (min-width: 992px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    main {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+    aside {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+}
+
 /* Project content blok - zelfde stijl als aside */
 .project-content {
     background-color: #111;
@@ -173,4 +189,35 @@ a:hover {
 
 .leaflet-popup-tip {
     background-color: #111;
+}
+
+/* Responsive aanpassingen */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 180px;
+    }
+    
+    aside {
+        margin-top: 1.5rem;
+    }
+    
+    .project-content {
+        padding: 1rem;
+    }
+}
+
+/* Alert styling voor contact form */
+.alert-success {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+}
+.alert-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
 }
